@@ -1,0 +1,24 @@
+import requests
+from bs4 import BeatifulSoup
+
+#Get the content
+request = requests.get("....URL....")
+content = request.content()
+
+#Find the element
+soup = BeatifulSoup(content, "html.parser")
+element = soup.find("span", {:})
+price_with_symbol = element.text.strip()
+
+#Remove symbol
+price_without_symbol = price_with_symbol[1:]
+
+#Convert to float
+price_as_number = float(price_without_symbol)
+
+if price_as_number < 200:
+  print "Buy"
+  
+else:
+  print "Don't buy"
+
