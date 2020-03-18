@@ -1,2 +1,2 @@
 # getprice
-Get the price of an item from a website
+Get the price of an item from a website.
